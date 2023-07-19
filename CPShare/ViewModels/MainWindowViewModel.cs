@@ -64,7 +64,7 @@ namespace CPShare.ViewModels
                     }
                     if (tokenChar == ' ')
                     {
-                        wt += 5;
+                        wt += 10;
                         continue;
                     }
                     var tokenStr = tokenChar.ToString();
@@ -101,7 +101,7 @@ namespace CPShare.ViewModels
                     }
                     if (tokenChar == ' ')
                     {
-                        i += 5;
+                        i += 10;
                         continue;
                     }
                     var tokenStr = tokenChar.ToString();
