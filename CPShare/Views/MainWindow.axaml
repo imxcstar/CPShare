@@ -17,8 +17,12 @@
     </Design.DataContext>
 
 	<DockPanel>
-		<cc:CodeTextBlock></cc:CodeTextBlock>
-		<Button Command="{Binding Test}">Test</Button>
+		<StackPanel DockPanel.Dock="Top" IsVisible="False">
+			<Button Command="{Binding Test}">Test</Button>
+		</StackPanel>
+		<StackPanel DockPanel.Dock="Bottom" Background="RGB(48,56,69)">
+			<cc:CodeTextBlock></cc:CodeTextBlock>
+		</StackPanel>
 	</DockPanel>
 
 </Window>

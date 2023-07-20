@@ -22,8 +22,7 @@ namespace CPShare.Controls
 
         public CodeTextBlock()
         {
-            Tokens = new ObservableCollection<CodeToken>(@"
-    using System;
+            Tokens = new ObservableCollection<CodeToken>(@"    using System;
     using System.IO;
 
     namespace CPShare
@@ -48,7 +47,7 @@ namespace CPShare.Controls
         {
             if (Tokens != null)
             {
-                var i = 0.0;
+                var i = 25.0;
                 var j = 0;
                 foreach (var token in Tokens)
                 {
@@ -58,8 +57,11 @@ namespace CPShare.Controls
                             continue;
                         if (tokenChar == '\n')
                         {
-                            i = 0;
+                            i = 25.0;
                             j++;
+                            var lineNumberStr = j.ToString();
+                            var lineNumber = new FormattedText(lineNumberStr, CultureInfo.CurrentUICulture, FlowDirection.RightToLeft, Typeface.Default, 20, Brush.Parse(Color.FromRgb(70,78,91).ToString()));
+                            context.DrawText(lineNumber, new Point(20-Math.Max(0,20-20/ lineNumberStr.Length), (j-1) * lineNumber.Height));
                             continue;
                         }
                         if (tokenChar == ' ')
